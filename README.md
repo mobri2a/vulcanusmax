@@ -21,7 +21,7 @@ The 300x300mm heated bed has 3 zones, small, medium, or large, to reduce power c
 
 * Controller
 
-32 bit processor running at 120MHz with 3209 stepper motor drivers and Marlin 2.0 firmware.
+32 bit processor running at 120MHz with 2209 stepper motor drivers and Marlin 2.0 firmware.
 
 * Extruders
 
@@ -66,6 +66,11 @@ Marlin 2.0
 ### Power
 
 ## Bill of Materials
+
+| Item | Qty | Cost |
++--+--+--+
+| [BIGTREETECH TMC2209 V1.2 Stepper Motor Drivers](https://www.aliexpress.com/snapshot/0.html?spm=a2g0s.9042647.6.2.236d4c4dOF5Ewb&orderId=8010661253423936&productId=33029587820)| 5 | $28.88 |
+| [BIGTREETECH SKR V1.4 Turbo Control Board](https://www.aliexpress.com/snapshot/0.html?spm=a2g0s.9042647.6.5.236d4c4dOF5Ewb&orderId=8010661253433936&productId=4000480059509)| 1 | $33.00 |
 
 ## References
 
