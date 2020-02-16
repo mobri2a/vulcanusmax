@@ -1,7 +1,7 @@
 # Vulcanus Max
 ## Overview
 
-This project is to create a large-format Fused Deposit Modelling (FDM) printer based on CoreXY design using the 2015 Vulcanus Max project as a starting point.
+This project is to create a large-format 300x300x400mm Fused Deposit Modelling (FDM) printer based on CoreXY design using the 2015 Vulcanus Max project as a starting point.
 
 ## Objectives
 
@@ -76,6 +76,8 @@ Marlin 2.0
 | Display panel | | |
 | Extruder | | |
 | Hot End | | |
+
+## Printed Parts
 
 ## References
 
