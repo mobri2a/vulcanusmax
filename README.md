@@ -3,6 +3,74 @@
 
 This project is to create a large-format 300x300x400mm Fused Deposit Modelling (FDM) printer based on CoreXY design using the 2015 Vulcanus Max project as a starting point.
 
+## Configure and Build Marlin
+
+1) Download BTT Marlin 2.0.x bugfix
+2) Download latest 2.0 Marlin
+3) Copy #2 over #1
+4) Copy platformio.ini to root of #1 over the exiting platformio.ini
+5) Edit the config files in #1 and transfer settings from latest build/Marlin in this repo
+
+### Specific Config Changes
+
+#### configuration.h
+
+Numerous (to be listed)
+
+```
+#define STRING_CONFIG_H_AUTHOR "(Elvantech, SKR-V1.4 LPC1768)"
+#define SERIAL_PORT 3
+#define SERIAL_PORT -1
+#define BAUDRATE 115200
+#define MOTHERBOARD BOARD_BTT_SKR_V1_4
+#define CUSTOM_MACHINE_NAME "Vulcanus SKR"
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define NEOPIXEL_LED
+  #define NEOPIXEL_TYPE   NEO_GRB 
+  #define NEOPIXEL_PIN     P1_24  
+  #define NEOPIXEL_PIXELS 26    
+  #define NEOPIXEL_STARTUP_TEST 
+```
+Preheats
+```
+#define PREHEAT_1_LABEL       "PLA"
+#define PREHEAT_1_TEMP_HOTEND 210
+#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_2_LABEL       "ABS"
+#define PREHEAT_2_TEMP_HOTEND 245
+#define PREHEAT_2_TEMP_BED    105
+#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_3_LABEL       "Nylon"
+#define PREHEAT_3_TEMP_HOTEND 245
+#define PREHEAT_3_TEMP_BED     80
+#define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_4_LABEL       "PETG"
+#define PREHEAT_4_TEMP_HOTEND 230
+#define PREHEAT_4_TEMP_BED     70
+#define PREHEAT_4_FAN_SPEED     0 // Value from 0 to 255
+
+#define PREHEAT_5_LABEL       "TPU"
+#define PREHEAT_5_TEMP_HOTEND 200
+#define PREHEAT_5_TEMP_BED     90
+#define PREHEAT_5_FAN_SPEED     0 // Value from 0 to 255
+```
+
+
+#### configuration_adv.h
+
+X_CURRENT = 1000
+Y_CURRENT = 1000
+Z_CURRENT = 1000
+
+
+#### configuration_secure.h
+
+Just copy it.
+
 ## Objectives
 
 ### Features
