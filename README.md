@@ -13,6 +13,7 @@ Vulcanus Max is an open source CoreXY, large-capacity printer:
 	* Sensorless homing (X&Y)
 * BuildTak flexible build plate
 * Dual E3D V6 hot ends
+* Type 1 thermistor: HT-NTC100K 3950
 
 # Configure and Build Marlin
 
@@ -63,7 +64,7 @@ First time you will need to upload index.html.gz. Get it from https://github.com
 
 ## Notes
 
-**Extruder**: Do not exceed 30mm/s extraction speed. It's a geared extruder and it *does not like it.* (2/28/21 - note applies to the Bondtech Bowden extruder. Not certain of the max on the Bondtech Prusa extruder.)
+**Extruder**: Do not exceed 30mm/s extraction speed. It's a geared extruder and it *does not like it.*
 
 # Build
 
@@ -77,10 +78,6 @@ First time you will need to upload index.html.gz. Get it from https://github.com
 # Operate
 
 ## UBL
-
-**Glass Bed**: (kept for future reference - printer no longer uses a glass bed) Bed Leveling is a multi-step process. Simply running the UBL gcode is not enough. UBL detects the aluminum plate using the inductive sensor. It does not detect the glass surface of the bed. Always level a HOT bed (60c). The difference in distance between cold (20c) and hot is as much as -1 mm (into the bed).
-
-For glass beds follow up *G29 P3 T* with *Edit Mesh* from the printer's console. This will position the nozzle to every point in the grid, with the *nozzle* (not the probe) over the point. Use a feeler gauge or paper to adjust the height.
 
 **Flex Plate**: UBL works very well with the BuildTak flexible build plate system. A script has been configured on Octopi for this purpose.
 
