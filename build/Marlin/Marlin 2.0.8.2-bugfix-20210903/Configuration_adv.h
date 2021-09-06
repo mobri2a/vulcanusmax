@@ -2573,7 +2573,10 @@
  * To use the reading capabilities, also connect #_SERIAL_RX_PIN to PDN_UART without
  * a resistor.
  * The drivers can also be used with hardware serial.
- *
+ * 
+ * MPO ELVANTECH current Calculation:
+ * Motor rating in amps / 1.41 * 0.8
+ * 
  * TMCStepper library is required to use TMC stepper drivers.
  * https://github.com/teemuatlut/TMCStepper
  */
@@ -2588,7 +2591,8 @@
   #define INTERPOLATE      true
 
   #if AXIS_IS_TMC(X) // MPO ELVANTECH
-    #define X_CURRENT       1000        // (mA) RMS current. Multiply by 1.414 for peak current.
+    // per https://mak3r.de/2020/04/03/stepper-driver-current-and-vref-calculator/ use 851
+    #define X_CURRENT       851        // (mA) RMS current. Divide by 1.414 for peak current and use 80%
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16        // 0..256
     #define X_RSENSE          0.11
@@ -2606,7 +2610,8 @@
   #endif
 
   #if AXIS_IS_TMC(Y) // MPO ELVANTECH
-    #define Y_CURRENT       1000
+    // per https://mak3r.de/2020/04/03/stepper-driver-current-and-vref-calculator/ use 851
+    #define Y_CURRENT       851
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -2687,7 +2692,8 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      988  // MPO ELVANTECH 0.7A Bondtech LGX
+    // per https://mak3r.de/2020/04/03/stepper-driver-current-and-vref-calculator/ use 397  
+    #define E0_CURRENT      397  // MPO ELVANTECH 0.7A Bondtech LGX
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
